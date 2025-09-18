@@ -1,0 +1,27 @@
+# .gitignore 파일 내용 예시
+
+# Python 관련 파일들
+__pycache__/
+*.pyc
+.pytest_cache/
+.vscode/ # VSCode 설정 파일
+
+# 가상 환경
+.venv
+venv/
+env/
+.pyenv/
+
+# 데이터 관련
+dataset/
+NIKL_AU_2023_COMPETITION_v1.0/
+prediction/
+
+# 모델 체크포인트
+model/
+best_model/
+wandb/
+
+# 운영체제 관련 파일
+.DS_Store
+.vscode-server
