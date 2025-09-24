@@ -23,7 +23,7 @@ def parse_args():
     parser.add_argument(
         "--model_name",
         type=str,
-        default="klue/bert-base",#"klue/bert-base",
+        default="beomi/KcELECTRA-base-v2022",#"klue/bert-base",
         help='모델 이름 (예: "klue/bert-base", "monologg/koelectra-base-finetuned-nsmc")',
     )
     parser.add_argument(
@@ -46,7 +46,7 @@ def parse_args():
     parser.add_argument(
         "--batch_size",
         type=int,
-        default=64, # 8
+        default=16, # 8
         help="배치 사이즈 (메모리에 맞게 조절, 예: 16 또는 32)",
     )
     parser.add_argument(

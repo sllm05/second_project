@@ -60,7 +60,7 @@ def infer_and_eval(model_name,model_dir):
     #     os.path.join(result_path,"result.csv"), index=False
     # )
     # JSONL 파일로 변경
-    output_path = os.path.join(result_path, "result_v2.jsonl")
+    output_path = os.path.join(result_path, "result_llm_arg.jsonl")
     output.to_json(
         output_path, 
         orient="records", 
@@ -72,7 +72,7 @@ def infer_and_eval(model_name,model_dir):
     return output
 
 if __name__ == "__main__":
-    model_name = "klue/bert-base"
+    model_name = "beomi/KcELECTRA-base-v2022"
     model_dir = "./best_model"
 
     infer_and_eval(model_name,model_dir)

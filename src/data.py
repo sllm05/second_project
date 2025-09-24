@@ -52,7 +52,7 @@ def construct_tokenized_dataset(dataset, tokenizer, max_length):
 def prepare_dataset(dataset_dir, tokenizer, max_len):
     """학습(train)과 평가(test)를 위한 데이터셋을 준비"""
     # load_data
-    train_dataset = load_data(os.path.join(dataset_dir, "train.csv")) 
+    train_dataset = load_data(os.path.join(dataset_dir, "augmented_train_llm.csv")) 
     valid_dataset = load_data(os.path.join(dataset_dir, "dev.csv"))
     test_dataset = load_data(os.path.join(dataset_dir, "test.csv"))
     print("--- data loading Done ---")
