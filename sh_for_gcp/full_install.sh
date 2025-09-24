@@ -2,7 +2,20 @@
 
 # CUDA 및 NVIDIA Driver 설치
 echo "Starting CUDA and NVIDIA Driver installation..."
-bash cuda_install.sh
+
+# Ubuntu 버전 확인 (22.04 권장/필수 안내)
+UBU_VER=$(lsb_release -rs 2>/dev/null || echo "")
+if [ -z "$UBU_VER" ]; then
+    echo "[안내] Ubuntu 22.04 (Jammy) 환경에서 동작을 검증했습니다. 다른 버전에서는 실패할 수 있습니다."
+else
+    if [ "$UBU_VER" != "22.04" ]; then
+        echo "[경고] 현재 Ubuntu $UBU_VER 입니다. Ubuntu 22.04 (Jammy) 사용을 권장합니다."
+    else
+        echo "[확인] Ubuntu 22.04 (Jammy) 환경입니다."
+    fi
+fi
+
+bash cuda_install.sh "$@"
 
 # 재부팅 이후에 이 스크립트를 다시 실행해야 합니다.
 # 시스템 재부팅이 완료되었으면 아래 부분부터 실행하세요.
